@@ -1,0 +1,35 @@
+create table tbusu(
+    codusu int(11) unsigned not null AUTO_INCREMENT,
+    nome varchar(60) not null,
+    email varchar(100) not null,
+    senha varchar(20) not null,
+    primary key(codusu)
+);
+
+create table tbaluno(
+    codaluno int(11) unsigned not null AUTO_INCREMENT,
+    nome varchar(60) not null,
+    sexo char(1) not null,
+    nascimento date not null,
+    endereco varchar(60) not null,
+    fone varchar(14) not null,
+    primary key(codaluno)
+);
+
+create table tbcursos(
+    codcurso int(11) unsigned not null AUTO_INCREMENT,
+    nome varchar(100) not null,
+    turno varchar(10) not null,
+    cargahoraria double(9,2) not null,
+    primary key(codcurso)
+);
+
+create table tbmatriculas(
+    codmat int(11) unsigned not null AUTO_INCREMENT,
+    codcurso int(11) unsigned not null,
+    codaluno int(11) unsigned not null,
+    codusu int(11) unsigned not null,
+    data date not null,
+    hora time not null,
+    primary key(codmat)
+);
